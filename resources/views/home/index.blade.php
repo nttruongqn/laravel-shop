@@ -1,6 +1,5 @@
 @extends('layouts.app')
-@section('content')
-        <!-- banner -->
+@section('content')        <!-- banner -->
         <div class="banner">
             <div class="container">
                 <div class="banner-container">
@@ -108,42 +107,16 @@
             <div class="container">
                 <div class="p-c-container">
                     <div class="p-c-list">
-                        <div class="p-c-list-item">
-                            <a href="" class="p-c-list-link">
-                                <img src="assets/images/category/icon-mobile.webp" alt="">
-                                <span>Điện thoại</span>
-                            </a>
-                        </div>
-                        <div class="p-c-list-item">
-                            <a href="" class="p-c-list-link">
-                                <img src="assets/images/category/icon-laptop.webp" alt="">
-                                <span>Laptop</span>
-                            </a>
-                        </div>
-                        <div class="p-c-list-item">
-                            <a href="" class="p-c-list-link">
-                                <img src="assets/images/category/icon-tablet.webp" alt="">
-                                <span>Máy tính bảng</span>
-                            </a>
-                        </div>
-                        <div class="p-c-list-item">
-                            <a href="" class="p-c-list-link">
-                                <img src="assets/images/category/icon-smartwatch.webp" alt="">
-                                <span>Đồng hồ thông minh</span>
-                            </a>
-                        </div>
-                        <div class="p-c-list-item">
-                            <a href="" class=" p-c-list-link">
-                                <img src="assets/images/category/icon-accessories.webp"" alt="">
-                                <span>Tai nghe</span>
-                            </a>
-                        </div>
-                        <div class=" p-c-list-item">
-                                <a href="" class="p-c-list-link">
-                                    <img src="assets/images/category/icon-screen.webp" alt="">
-                                    <span>Màn hình</span>
+                        @if (isset($categories))
+                            @foreach ($categories as $category)
+                            <div class="p-c-list-item">
+                                <a href="/" class="p-c-list-link">
+                                    <img src="{{ pare_url_file($category->c_avatar)}}" alt="">
+                                    <span>{{$category->c_name}}</span>
                                 </a>
-                        </div>
+                            </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
@@ -176,15 +149,17 @@
                     </div>
                     <div class="product-hot-sale-main">
                         <div class="p-h-s-m-list">
+                            @if (isset($hotProducts))
+                            @foreach ($hotProducts as $hotProduct)
                             <div class="p-h-s-m-item">
                                 <a href="" class="p-h-s-m-link">
-                                    <img src="assets/images/p-hot-sale/iphone-14-pro-max-dd.webp"" alt="">
-                                    <span class=" phsm-product-title">
-                                    Iphone 14 Pro Max
+                                    <img src="{{ pare_url_file($hotProduct->pro_avatar) }}"" alt="">
+                                    <span class="phsm-product-title">
+                                    {{$hotProduct->pro_name}}
                                     </span>
                                     <div class="phsm-product-price">
                                         <div class="pshm-pp-new-price">
-                                            <span>33.990.000 đ</span>
+                                            <span>{{number_format($hotProduct->pro_price, 0, '', '.')}} đ</span>
                                         </div>
                                         <!-- <div class="pshm-pp-old-price">
                                             <span>36.990.000 đ</span>
@@ -197,69 +172,10 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="p-h-s-m-item">
-                                <a href="" class="p-h-s-m-link">
-                                    <img src="assets/images/p-hot-sale/iphone-14-pro-max-dd.webp"" alt="">
-                                    <span class=" phsm-product-title">
-                                    Iphone 14 Pro Max
-                                    </span>
-                                    <div class="phsm-product-price">
-                                        <div class="pshm-pp-new-price">
-                                            <span>33.990.000 đ</span>
-                                        </div>
-                                        <!-- <div class="pshm-pp-old-price">
-                                            <span>36.990.000 đ</span>
-                                        </div> -->
-                                    </div>
-                                    <div class="phsm-product-vote">
-                                        <span>4</span>
-                                        <span></span><i class="fa-solid fa-star"
-                                            style="color: ffd400; font-size: 12px; padding-left:4px ;"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="p-h-s-m-item">
-                                <a href="" class="p-h-s-m-link">
-                                    <img src="assets/images/p-hot-sale/iphone-14-pro-max-dd.webp"" alt="">
-                                    <span class=" phsm-product-title">
-                                    Iphone 14 Pro Max
-                                    </span>
-                                    <div class="phsm-product-price">
-                                        <div class="pshm-pp-new-price">
-                                            <span>33.990.000 đ</span>
-                                        </div>
-                                        <!-- <div class="pshm-pp-old-price">
-                                            <span>36.990.000 đ</span>
-                                        </div> -->
-                                    </div>
-                                    <div class="phsm-product-vote">
-                                        <span>4</span>
-                                        <span></span><i class="fa-solid fa-star"
-                                            style="color: ffd400; font-size: 12px; padding-left:4px ;"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="p-h-s-m-item">
-                                <a href="" class="p-h-s-m-link">
-                                    <img src="assets/images/p-hot-sale/iphone-14-pro-max-dd.webp"" alt="">
-                                    <span class=" phsm-product-title">
-                                    Iphone 14 Pro Max
-                                    </span>
-                                    <div class="phsm-product-price">
-                                        <div class="pshm-pp-new-price">
-                                            <span>33.990.000 đ</span>
-                                        </div>
-                                        <!-- <div class="pshm-pp-old-price">
-                                            <span>36.990.000 đ</span>
-                                        </div> -->
-                                    </div>
-                                    <div class="phsm-product-vote">
-                                        <span>4</span>
-                                        <span></span><i class="fa-solid fa-star"
-                                            style="color: ffd400; font-size: 12px; padding-left:4px ;"></i>
-                                    </div>
-                                </a>
-                            </div>
+
+                            @endforeach
+                            @endif
+
 
 
                         </div>

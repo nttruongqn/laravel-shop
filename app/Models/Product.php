@@ -9,6 +9,12 @@ class Product extends Model
 {
     use HasFactory;
 
+    CONST STATUS_PUBLIC = 1;
+    CONST STATUS_PRIVATE = 1;
+
+    CONST HOT_ON = 1;
+    CONST HOT_OFF = 1;
+
     protected $table = 'products';
     protected $guarded = [''];
 
@@ -40,12 +46,12 @@ class Product extends Model
 
     public function getStatus()
     {
-        return array_get($this->status, $this->pro_active, '[N\A]');
+        return array_get($this->status, $this->pro_active, '[]');
     }
 
      public function getHot()
     {
-        return array_get($this->hot, $this->pro_hot, '[N\A]');
+        return array_get($this->hot, $this->pro_hot, '[]');
     }
 
     public function category(){

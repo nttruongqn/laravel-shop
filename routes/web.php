@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('danh-muc/{slug}-{id}', 'CategoryController@getListProduct')->name('get.list.product');

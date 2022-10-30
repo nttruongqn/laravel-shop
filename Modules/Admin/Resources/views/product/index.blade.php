@@ -21,7 +21,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <input type="text" name="name" id="" class="form-control" placeholder="Tên sản phẩm..."
-                        value="{{\Request::get('name')}}">
+                        value="{{ \Request::get('name') }}">
                 </div>
                 <div class="form-group">
                     <select name="cate" id="" class="form-control">
@@ -29,7 +29,7 @@
                         @if (isset($categories))
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}"
-                                    {{\Request::get('cate') == $category->id ? 'selected': ''}}>
+                                    {{ \Request::get('cate') == $category->id ? 'selected' : '' }}>
                                     {{ $category->c_name }}</option>
                             @endforeach
                         @endif
@@ -63,7 +63,7 @@
                                     <span>
                                         <i class="fas fas-dollar-sign"></i>
                                     </span>
-                                    <span>{{ $product->pro_price }} (đ)</span>
+                                    <span>{{ number_format($product->pro_price, 0, '', '.') }} (đ)</span>
                                 </li>
                                 <li>
                                     <span>

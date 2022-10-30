@@ -6,8 +6,7 @@
                     &#9776;
                 </div>
                 <div class="header-left-logo">
-                    <span class="header-three-line"
-                        style="color: #fff;font-size: 24px; display: none;">&#9776;</span>
+                    <span class="header-three-line" style="color: #fff;font-size: 24px; display: none;">&#9776;</span>
                     <a class="hl-logo-link" href="">
                         <span>NTTQN</span>
                     </a>
@@ -27,11 +26,26 @@
                             Trang chủ
                         </a>
                     </li>
-                    <li class="header-right-item">
-                        <a href="" class="header-right-link">
+                    <li class="header-right-item" id="extra-header-product">
+                        <div href="" class="header-right-link">
                             Sản phẩm
-                        </a>
+                        </div>
                     </li>
+                    <div class="extra-header-product">
+                        <div class="hpe-list-arrow">
+                        </div>
+                        <ul class="hpe-list">
+                            @if (isset($categories))
+                                @foreach ($categories as $category)
+                                    <li class="hpe-list-item">
+                                        <a href="{{route('get.list.product',[$category->c_slug,$category->id])}}" class="hpe-item-link">
+                                            <span>{{ $category->c_name }}</span>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
                     <li class="header-right-item">
                         <a href="" class="header-right-link">
                             Tin tức
@@ -55,6 +69,7 @@
                 </div>
 
             </div>
+
         </div>
         <div class="header-extra">
             <div class="he-top">
@@ -62,8 +77,7 @@
                     &#9776;
                 </div>
                 <div class="header-left-logo">
-                    <span class="header-three-line"
-                        style="color: #fff;font-size: 24px; display: none;">&#9776;</span>
+                    <span class="header-three-line" style="color: #fff;font-size: 24px; display: none;">&#9776;</span>
                     <a class="hl-logo-link" href="">
                         <span>NTTQN</span>
                     </a>
@@ -76,11 +90,25 @@
                             Trang chủ
                         </a>
                     </li>
-                    <li class="he-menu-item">
-                        <a href="" class="he-menu-link">
+                    <li class="he-menu-item product-arrow">
+                        <div href="" class="he-menu-link">
                             Sản phẩm
-                        </a>
+                        </div>
+                        <div class="he-menu-item-arrow">
+
+                        </div>
                     </li>
+                    <ul class="he-menu-product-list">
+                        @if (isset($categories))
+                            @foreach ($categories as $category)
+                                <li class="he-menu-item product">
+                                    <a href="{{route('get.list.product',[$category->c_slug,$category->id])}}" class="he-menu-link">
+                                        {{ $category->c_name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
                     <li class="he-menu-item">
                         <a href="" class="he-menu-link">
                             Tin tức
@@ -102,7 +130,10 @@
                         </a>
                     </li>
                 </ul>
+
             </div>
+
         </div>
     </div>
+
 </div>

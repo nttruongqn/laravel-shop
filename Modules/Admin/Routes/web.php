@@ -36,7 +36,6 @@ Route::prefix('admin')->group(function() {
     });
 
     Route::prefix('article')->group(function () {
-        Route::get('/', 'AdminArticleController@index')->name('admin.get.list.article');
         Route::get('/','AdminArticleController@index')->name('admin.get.list.article');
         Route::get('/create', 'AdminArticleController@create')->name('admin.get.create.article');
         Route::post('/create', 'AdminArticleController@store');

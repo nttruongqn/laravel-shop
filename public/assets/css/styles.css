@@ -94,7 +94,48 @@ a {
 
 }
 
-.header-left-logo {}
+.header-right-item:nth-child(2) {
+    cursor: pointer;
+}
+
+.hpe-list-arrow {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    position: absolute;
+    top:-20px;
+    left: 50px;
+}
+
+
+.extra-header-product {
+    display: none;
+    width: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 80px;
+    left: 120px;
+    z-index: 200;
+    background-color: #0e2333;
+    z-index: 1000;
+}
+
+
+
+.hpe-list-item {
+    padding: 10px 24px;
+    border-bottom: 0.5px solid #eee;
+}
+
+.hpe-list-item:last-child {
+    border-bottom: none;
+}
+
+.hpe-list-item a span {
+    color: #ffffff;
+}
+
+
 
 .hl-logo-link span {
     color: #ffffff;
@@ -381,6 +422,7 @@ a {
     padding: 10px;
     margin-bottom: 10px;
 }
+
 .product-hot-sale-title span {
     font-size: 20px;
     font-weight: 600;
@@ -415,9 +457,14 @@ a {
 }
 
 .phsm-product-title {
+    width: 100%;
     display: flex;
     font-size: 18px;
     font-weight: 600;
+    text-overflow: ellipsis ;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 
 }
 
@@ -435,11 +482,12 @@ a {
 }
 
 /* hot product */
-.product-hot-sale-title{
+.product-hot-sale-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .product-main {
     margin-bottom: 10px;
 }
@@ -576,6 +624,7 @@ a {
     .banner-right-top-news a span {
         font-size: 12px;
     }
+
     .header-left-search {
         width: 70%;
     }
@@ -778,11 +827,36 @@ a {
         width: 100%;
     }
 
+    .he-menu-item.product-arrow{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .he-menu-item-arrow{
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #fff;
+        position: relative;
+        display: none;
+    }
+    .he-menu-product-list{
+        display: none;
+    }
 
     .header-extra .he-bottom .he-menu-item {
         padding: 8px 15px;
         border-bottom: 0.1px solid #eee;
     }
+
+    .header-extra .he-bottom .he-menu-item.product {
+        padding: 8px 20px;
+        border-bottom: 0.1px solid #eee;
+    }
+
+    .header-extra .he-bottom .he-menu-item.product a{
+        font-size: 15px;
+    }
+
 
     .header-extra .he-bottom .he-menu-item .he-menu-link {
         color: #eee !important;

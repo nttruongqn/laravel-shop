@@ -10,7 +10,6 @@
     </nav>
 </div>
 
-
     <div class="col-lg-12 tm-a">
         <h1 class="title-manager">Quản lý danh mục</h1>
         <h2><a href="{{ route('admin.get.create.category') }}">Thêm mới </a></h2>

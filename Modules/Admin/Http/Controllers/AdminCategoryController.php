@@ -48,7 +48,7 @@ class AdminCategoryController extends Controller
         if ($id) $category = Category::find($id);
 
         $category->c_name = $requestCategory->c_name;
-        $category->c_slug = str_slug($requestCategory->c_slug);
+        $category->c_slug = str_slug($requestCategory->c_name);
         $category->c_icon = str_slug($requestCategory->c_icon);
         $category->c_title_seo = $requestCategory->c_title_seo ? $requestCategory->c_title_seo : $requestCategory->c_name;
         $category->c_description_seo = $requestCategory->c_description_seo;

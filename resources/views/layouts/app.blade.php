@@ -17,9 +17,11 @@
     <link rel="stylesheet" href="{{asset('assets/libs/fontawesome-free-6.2.0-web/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/libs/fontawesome-free-6.2.0-web/css/brands.min.css')}}">
 </head>
-@include('components.header')
-@yield('content')
-@include('components.footer')
+<div class="wrapper">
+    @include('components.header')
+    @yield('content')
+    @include('components.footer')
+</div>
 <script src="{{asset('assets/libs/jquery-3.6.1.min.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
 <script src="{{asset('assets/libs/bootstrap-4.6.2/js/bootstrap.min.js')}}"></script>
