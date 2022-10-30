@@ -1,0 +1,42 @@
+.page-header {
+    margin-top: 10px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+}
+
+.breadcrumb {
+    margin: 0!important;
+}
+
+.page-header a {
+    text-decoration: none;
+
+}
+
+.tm-a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tm-a a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.error-text {
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.ex-pl {
+    padding-left: 20px;
+}
