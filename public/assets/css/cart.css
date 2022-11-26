@@ -24,7 +24,7 @@ tbody td{
     display: flex;
     height: 100%;
     align-items: center;
-    
+
 }
 .product-cart-detail .pcd-main img{
     width: 70px;
@@ -60,7 +60,7 @@ tbody td{
     justify-content: center;
 }
 .product-cart-amount{
-    
+
 }
 .btn-payment{
     padding: 2px 4px;
@@ -98,18 +98,18 @@ tbody td{
 
 /* Responsive */
 @media (max-width: 1200px) {
- 
+
 }
 
 
 @media (max-width: 992px) {
- 
+
 }
 
 
 @media (max-width: 768px) {
 
-  
+
 }
 
 @media (max-width: 576px) {

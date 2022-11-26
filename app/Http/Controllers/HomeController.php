@@ -17,8 +17,12 @@ class HomeController extends FrontendController
     public function index()
     {
         $hotProducts = Product::where(['pro_hot' => 1, 'pro_active' => 1])->get();
+        $phoneProducts = Product::where(['pro_hot' => 1, 'pro_category_id'=>'1'])->get();
+        $laptopProducts = Product::where(['pro_hot' => 1, 'pro_category_id'=>'2'])->get();
         $viewData = [
-            'hotProducts' => $hotProducts
+            'hotProducts' => $hotProducts,
+            'phoneProducts' => $phoneProducts,
+            'laptopProducts' => $laptopProducts
         ];
 
         return view('home.index', $viewData);

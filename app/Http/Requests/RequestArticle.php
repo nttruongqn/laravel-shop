@@ -28,7 +28,7 @@ class RequestArticle extends FormRequest
         ];
     }
 
-    public function message()
+    public function messages()
     {
         return [
             'a_name.required' => 'Trường này không được để trống',

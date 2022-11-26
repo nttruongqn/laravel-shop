@@ -1,6 +1,11 @@
 @extends('admin::layouts.master')
 
 @section('content')
+<style>
+    svg.active{
+        color: #ff9705 !important;
+    }
+</style>
     <div class="page-header">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -12,7 +17,7 @@
     </div>
 
     <div class="tm-a">
-        <h1 class="title-manager">Quản lý Sản phẩm</h1>
+        <h1 class="title-manager">Quản lý sản phẩm</h1>
         <h2><a href="{{ route('admin.get.create.product') }}">Thêm mới </a></h2>
     </div>
 
@@ -55,6 +60,11 @@
         <tbody>
             @if (isset($products))
                 @foreach ($products as $product)
+                <?php $age = 0;
+                if($product->pro_total_rating){
+                    $age = round($product->pro_total_number/ $product->pro_total_rating, 2);
+                }
+                ?>
                     <tr>
                         <td>{{ $product->id }}</td>
                         <td>{{ $product->pro_name }}
@@ -70,6 +80,15 @@
                                         <i class="fas fas-dollar-sign"></i>
                                     </span>
                                     <span>{{ $product->pro_sale }} (%)</span>
+                                </li>
+                                <li>
+                                    <span>Đánh giá: </span>
+                                    <span>
+                                        @for ($i=1; $i<=5; $i++)
+                                        <i class="fa fa-star {{ $i <= $age ? 'active':'' }}" style="color: #999"></i>
+                                        @endfor
+                                    </span>
+                                    <span> {{$age}} </span>
                                 </li>
                             </ul>
                         </td>

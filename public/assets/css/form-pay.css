@@ -1,0 +1,59 @@
+
+.pay-left-container{
+ border: 1px solid #eee;
+ padding: 10px;
+}
+.pay-left-header, .pay-right-header{
+    background-color: #0e2333;
+    padding: 10px;
+    justify-content: space-between;
+}
+.pay-left-header,.pay-right-header span{
+    color: #ffffff;
+    font-size: 16px;
+}
+.prdi-right{
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+.prdi-left{
+    padding: 10px;
+}
+.prdi-left img{
+    width: 70px;
+    height: 70px;
+}
+.prl-item-qty,.prr-item-price span{
+    font-size: 14px;
+}
+.pr-product-list{
+    border: 1px solid #eee;
+}
+.pr-product-item{
+    border-bottom: 1px solid #eee;
+}
+.pay-container{
+    padding-left: 0!important;
+    padding-right: 0!important;
+    min-height: 100vh;
+}
+.pr-product-price-total{
+    padding: 10px;
+}
+.pppt-order-total{
+    justify-content: space-between;
+}
+.pf-payment{
+    margin-top: 10px;
+    padding: 4px;
+}
+
+
+@media (max-width: 576px) {
+ .pay-right-header{
+    margin-top: 10px;
+ }
+}
+
+

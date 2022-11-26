@@ -16,6 +16,7 @@ class RequestProduct extends FormRequest
         return true;
     }
 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,11 +25,11 @@ class RequestProduct extends FormRequest
     public function rules()
     {
         return [
-            'pro_name' => 'required||unique:products,pro_name' .$this->id,
+            'pro_name' => 'required||unique:products,pro_name'.$this->id,
         ];
     }
 
-    public function message(){
+    public function messages(){
         return [
             'pro_name.required' => 'Trường này không được để trống',
             'pro_name.unique' => 'Tên không được trùng lặp'

@@ -51,9 +51,9 @@
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
-                     <div class="nav">
+                    <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="{{ \Request::route()->getName() === 'admin.home'?'active':''}} nav-link"
+                        <a class="{{ \Request::route()->getName() === 'admin.home' ? 'active' : '' }} nav-link"
                             href="{{ route('admin.home') }}">
                             <div class="sb-nav-link-icon"></div>
                             Trang tổng quan
@@ -67,17 +67,26 @@
                             href="{{ route('admin.get.list.product') }}">
                             <div class="sb-nav-link-icon"></div>
                             Sản phẩm
-                        </a><a
+                        </a>
+                        <a class="{{ \Request::route()->getName() == 'admin.get.list.rating' ? 'active' : '' }} nav-link"
+                            href="{{ route('admin.get.list.rating') }}">
+                            <div class="sb-nav-link-icon"></div>
+                            Đánh giá
+                        </a>
+                        <a
                             class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : '' }}
                             nav-link"
                             href="{{ route('admin.get.list.article') }}">
                             <div class="sb-nav-link-icon"></div>
                             Tin tức
-                        </a><a class="nav-link" href="index.html">
+                        </a>
+                        <a class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active': ''}} nav-link"
+                            href="{{ route('admin.get.list.transaction') }}">
                             <div class="sb-nav-link-icon"></div>
                             Đơn hàng
                         </a>
-                        </a><a class="nav-link" href="index.html">
+                        </a><a class="{{ \Request::route()->getName() == 'admin.get.list.user'?'active': '' }} nav-link "
+                            href="{{ route('admin.get.list.user') }}">
                             <div class="sb-nav-link-icon"></div>
                             Thành viên
                         </a>
@@ -164,13 +173,27 @@
     <script src=""></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'" crossorigin="anonymous">
     </script>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script> --}}
+
+    <script src="{{asset('assets/libs/jquery-3.6.1.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
     <script src=" {{ asset('admin-template/js/scripts.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src=" {{ asset('admin-template/assets/demo/chart-area-demo.js') }} "></script>
     <script src=" {{ asset('admin-template/assets/demo/chart-bar-demo.js') }} "></script>
     <script src=" https://cdn.jsdelivr.net/npm/simple-datatables@latest' " crossorigin="anonymous"></script>
     <script src=" {{ asset('admin-template/js/datatables-simple-demo.js') }} "></script>
-</body>
 
+    <script>
+        var loadFile = function(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('output');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+    </script>
+    @yield('script')
+</body>
 </html>

@@ -6,7 +6,7 @@
                 <label for="pro_name">Tên Sản phẩm</label>
                 <input type="text" class="form-control" name="pro_name" id="pro_name"
                     value="{{ old('pro_name', isset($product->pro_name) ? $product->pro_name : '') }}"
-                    placeholder="Nhập tên Sản phẩm">
+                    placeholder="Nhập tên sản phẩm">
                 @if ($errors->has('pro_name'))
                     <div class="error-text">
                         {{ $errors->first('pro_name') }}
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="pro_content">Nội dung</label>
-                <textarea class="form-control" name="pro_content" id="" cols="30" rows="10"
+                <textarea class="form-control" name="pro_content" id="pro_content" cols="30" rows="10"
                     placeholder="Nội dung sản phẩm">{{ old('pro_content', isset($product->pro_content) ? $product->pro_content : '') }}</textarea>
                 @if ($errors->has('pro_content'))
                     <div class="error-text">
@@ -53,8 +53,9 @@
                 <select name="pro_category_id" id="" class="form-control">
                     @if (isset($categories))
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{old('product_category_id', isset($product->pro_category_id)?$product->pro_category_id:'') == $category->id ? "selected": ''}}>
-                                  {{$category->c_name}}
+                            <option value="{{ $category->id }}"
+                                {{ old('product_category_id', isset($product->pro_category_id) ? $product->pro_category_id : '') == $category->id ? 'selected' : '' }}>
+                                {{ $category->c_name }}
                             </option>
                         @endforeach
 
@@ -84,8 +85,11 @@
                     placeholder="% Khuyến mãi " />
             </div>
             <div class="form-group">
+                <img src="{{ asset('admin-template/assets/img/no_image.png') }}" id="output">
+            </div>
+            <div class="form-group">
                 <label for="pro_avatar">Avatar</label>
-                <input type="file" class="form-control" name="pro_avatar" id="rp_avatar">
+                <input type="file" onchange="loadFile(event)" class="form-control" name="pro_avatar" id="rp_avatar">
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -95,3 +99,10 @@
         </div>
     </div>
 </form>
+
+@section('script')
+    <script src=" {{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('pro_content');
+    </script>
+@endsection

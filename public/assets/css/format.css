@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+:root {
+    --yellow-color: #ffd400;
+    --black-color: #333333;
+    --white-color: #ffffff;
+    --border: 1px solid var(--black-color);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: #333 !important;
+    ;
+}
+
+.container {
+    max-width: 1200px !important;
+}
+
+.col-2-4 {
+    flex: 0 0 24%;
+    max-width: 24%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.pd-tb-20 {
+    padding: 20px 0;
+}

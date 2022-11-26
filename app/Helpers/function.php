@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 if (!function_exists('upload_image'))
 {
@@ -44,7 +45,7 @@ if (!function_exists('upload_image'))
 			$path = public_path().'/uploads/'.$folder.'/'.date('Y/m/d/');
 		}
 
-		if ( !\File::exists($path))
+		if ( !File::exists($path))
 		{
 			mkdir($path,0777,true);
 		}
@@ -87,6 +88,12 @@ if (!function_exists('get_data_user'))
 	{
 		return Auth::guard($type)->user() ? Auth::guard($type)->user()->$field : '';
 	}
+}
+
+if(!function_exists('get_data_user')){
+    function get_data_user($type, $field = 'id'){
+        return Auth::guard($type)->user() ? Auth::guard($type)->user()->$field: '';
+    }
 }
 
 ?>

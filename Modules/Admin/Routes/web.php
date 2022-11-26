@@ -44,4 +44,21 @@ Route::prefix('admin')->group(function() {
         Route::get('/{action}/{id}', 'AdminArticleController@action')->name('admin.get.action.article');
 
     });
+
+    //quanlydonhang
+    Route::prefix('transaction')->group(function () {
+        Route::get('/','AdminTransactionController@index')->name('admin.get.list.transaction');
+        Route::get('/view/{id}', 'AdminTransactionController@viewOrder')->name('admin.get.view.order');
+        Route::get('/delete/{id}', 'AdminTransactionController@deleteOrder')->name('admin.get.delete.order');
+    });
+
+    //quanlythanhvien
+    Route::prefix('user')->group(function () {
+        Route::get('/','AdminUserController@index')->name('admin.get.list.user');
+    });
+
+     //quanlydanhgia
+     Route::prefix('rating')->group(function () {
+        Route::get('/','AdminRatingController@index')->name('admin.get.list.rating');
+    });
 });
