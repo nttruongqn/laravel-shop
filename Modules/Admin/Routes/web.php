@@ -30,7 +30,7 @@ Route::prefix('admin')->group(function() {
         Route::get('/create', 'AdminProductController@create')->name('admin.get.create.product');
         Route::post('/create', 'AdminProductController@store');
         Route::get('/update/{id?}', 'AdminProductController@edit')->name('admin.get.update.product');
-        Route::post('/update/{id?}', 'AdminProductController@update');
+        Route::post('/update/{id}', 'AdminProductController@update');
         Route::get('/{action}/{id?}', 'AdminProductController@action')->name('admin.get.action.product');
 
     });
@@ -60,5 +60,12 @@ Route::prefix('admin')->group(function() {
      //quanlydanhgia
      Route::prefix('rating')->group(function () {
         Route::get('/','AdminRatingController@index')->name('admin.get.list.rating');
+    });
+
+      //quanlylienhe
+      Route::prefix('contact')->group(function () {
+        Route::get('/','AdminContactController@index')->name('admin.get.list.contact');
+        Route::get('/{action}/{id?}', 'AdminContactController@action')->name('admin.get.action.contact');
+
     });
 });

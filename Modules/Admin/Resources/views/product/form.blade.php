@@ -7,11 +7,11 @@
                 <input type="text" class="form-control" name="pro_name" id="pro_name"
                     value="{{ old('pro_name', isset($product->pro_name) ? $product->pro_name : '') }}"
                     placeholder="Nhập tên sản phẩm">
-                @if ($errors->has('pro_name'))
+                {{-- @if ($errors->has('pro_name'))
                     <div class="error-text">
                         {{ $errors->first('pro_name') }}
                     </div>
-                @endif
+                @endif --}}
             </div>
             <div class="form-group">
                 <label for="pro_description">Mô tả</label>
@@ -47,7 +47,6 @@
             </div>
         </div>
         <div class="col-sm-4">
-
             <div class="form-group">
                 <label for="name">Loại sản phẩm</label>
                 <select name="pro_category_id" id="" class="form-control">

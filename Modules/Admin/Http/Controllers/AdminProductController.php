@@ -58,7 +58,6 @@ class AdminProductController extends Controller
 
     public function insertOrUpdate($requestProduct, $id = '')
     {
-        // dd($requestProduct->all());
         $product = new Product();
         if ($id) $product = Product::find($id);
 

@@ -2,9 +2,15 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Contact;
+use App\Models\Product;
+use App\Models\Rating;
+use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,7 +20,23 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+            $ratings = Rating::with('user:id,name', 'product:id,pro_name')->limit(10)->get();
+            $contacts = Contact::limit(10)->get();
+            $productCount = Product::count();
+            $userCount = User::count();
+            $articleCount = Article::count();
+            $ratingCount = Rating::count();
+
+
+            $viewData = [
+                "ratings" => $ratings,
+                "contacts" => $contacts,
+                "productCount" => $productCount,
+                "userCount" => $userCount,
+                "articleCount" => $articleCount,
+                "ratingCount" => $ratingCount
+            ];
+            return view('admin::index', $viewData);
     }
 
     /**

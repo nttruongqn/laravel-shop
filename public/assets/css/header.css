@@ -234,9 +234,10 @@
     font-weight: bold;
 }
 
-.b-c,.bc ol{
+.b-c ol, .bc ol{
     padding-left: 10px !important;
 }
+
 
 /* Responsive */
 @media (max-width: 1200px) {

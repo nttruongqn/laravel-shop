@@ -25,7 +25,7 @@ class RequestProduct extends FormRequest
     public function rules()
     {
         return [
-            'pro_name' => 'required||unique:products,pro_name'.$this->id,
+            'pro_name' => 'required||unique:products,pro_name,'.$this->id,
         ];
     }
 

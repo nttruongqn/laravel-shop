@@ -16,7 +16,6 @@ class AdminRatingController extends Controller
     public function index()
     {
         $ratings = Rating::with('user:id,name','product:id,pro_name')->paginate(10);
-        \Log::debug($ratings);
         $viewData = [
             'ratings' => $ratings
         ];

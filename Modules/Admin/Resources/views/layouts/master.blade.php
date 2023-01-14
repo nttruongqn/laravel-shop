@@ -68,17 +68,22 @@
                             <div class="sb-nav-link-icon"></div>
                             Sản phẩm
                         </a>
-                        <a class="{{ \Request::route()->getName() == 'admin.get.list.rating' ? 'active' : '' }} nav-link"
-                            href="{{ route('admin.get.list.rating') }}">
-                            <div class="sb-nav-link-icon"></div>
-                            Đánh giá
-                        </a>
                         <a
                             class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : '' }}
                             nav-link"
                             href="{{ route('admin.get.list.article') }}">
                             <div class="sb-nav-link-icon"></div>
                             Tin tức
+                        </a>
+                        <a class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : '' }} nav-link"
+                            href="{{ route('admin.get.list.contact') }}">
+                            <div class="sb-nav-link-icon"></div>
+                            Liên hệ
+                        </a>
+                        <a class="{{ \Request::route()->getName() == 'admin.get.list.rating' ? 'active' : '' }} nav-link"
+                            href="{{ route('admin.get.list.rating') }}">
+                            <div class="sb-nav-link-icon"></div>
+                            Đánh giá
                         </a>
                         <a class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active': ''}} nav-link"
                             href="{{ route('admin.get.list.transaction') }}">
@@ -90,6 +95,7 @@
                             <div class="sb-nav-link-icon"></div>
                             Thành viên
                         </a>
+
                         {{-- <div class="sb-sidenav-menu-heading">Quản lý</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
